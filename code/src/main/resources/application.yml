@@ -1,1 +1,10 @@
-spring.application.name=cineMille
+spring:
+   application:
+      name: cineMille
+   data:
+      rest:
+         base-path: '/'
+business:
+   filmFilePath: 'C:\Users\giuse\Desktop\projects\cineMille\cineMille\db\film.xlsx'
+   saleFilePath: 'C:\Users\giuse\Desktop\projects\cineMille\cineMille\db\sale.xlsx'
+   proiezioniFilePath: 'C:\Users\giuse\Desktop\projects\cineMille\cineMille\db\proiezioni.xlsx'

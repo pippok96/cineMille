@@ -31,13 +31,44 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
+			</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- MANAGE EXCEL -->
+		<dependency> 
+		  <groupId>org.apache.poi</groupId>
+		  <artifactId>poi</artifactId> 
+		  <version>5.2.0</version> 
+		</dependency>
+		 
+		<dependency> 
+		  <groupId>org.apache.poi</groupId> 
+		  <artifactId>poi-ooxml</artifactId> 
+		  <version>5.2.0</version> 
+		</dependency>
+		
+		<dependency>
+		  <groupId>org.jxls</groupId>
+		  <artifactId>jxls-jexcel</artifactId>
+		  <version>1.0.9</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.dhatim</groupId>
+		    <artifactId>fastexcel-reader</artifactId>
+		    <version>0.15.3</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.dhatim</groupId>
+		    <artifactId>fastexcel</artifactId>
+		    <version>0.15.3</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
@@ -54,6 +85,28 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			
+			<!--<plugin>
+		      <artifactId>maven-resources-plugin</artifactId>
+		      <executions>
+		        <execution>
+		          <id>copy-resources</id>
+		          <phase>validate</phase>
+		          <goals>
+		            <goal>copy-resources</goal>
+		          </goals>
+		          <configuration>
+		            <outputDirectory>${basedir}/target/classes/static/</outputDirectory>
+		            <resources>
+		              <resource>
+		                <directory>${basedir}/../angular-client/static</directory>
+		              </resource>
+		            </resources>
+		          </configuration>
+		        </execution>
+		      </executions>
+		    </plugin> -->
+		    
 		</plugins>
 	</build>
 
