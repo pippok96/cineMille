@@ -1,1 +1,54 @@
-<p>home works!</p>
+<div class="p-3">
+    <header >
+        <p class="fw-bold fw-light fst-italic">{{ 'home.header'| translate | titlecase}}</p>
+    </header>
+    <section class="card p-3">
+        <div class="d-flex flex-row">
+
+            <!-- data inizio-->
+            <div class="d-flex flex-column me-2">
+                <label class="fw-light "> {{'home.dataInizio' | translate | titlecase}}</label>
+                <p-calendar [(ngModel)]="dataInizio"
+                            [dateFormat]="'dd/mm/yy'"
+                            [showIcon]="true"
+                            [showButtonBar]="true"
+                            (onSelect)="onSelectDataInizio($event)"></p-calendar>
+            </div>
+
+            <!--data fine-->
+            <div class="d-flex flex-column me-2">
+                <label class="fw-light"> {{'home.dataFine' | translate | titlecase}}</label>
+                <p-calendar [(ngModel)]="dataFine"
+                            [showIcon]="true"
+                            [dateFormat]="'dd/mm/yy'"
+                            [maxDate]="maxDataFine"
+                            [showButtonBar]="true"
+                            (onSelect)="onSelectDataFine($event)"></p-calendar>
+            </div>
+        </div>
+        
+        <div class="d-flex flex-row">
+            <div *ngFor="let proiezione of proiezioniInProgrammazione" class="m-3">
+                <p-card header="{{proiezione.film.nome}}" 
+                        subheader="{{getSubHeader(proiezione.sala.nome, proiezione.orario)}}" 
+                        [style]="{ width: '200px' }">
+                    
+                    <ng-template pTemplate="header">
+                        <img alt="Card" src="{{getSrcImg(proiezione.film.locandina)}}" height="200px"/>
+                    </ng-template>
+
+                    <div class="info-film">
+                        <p> <span>{{'home.durata' | translate | titlecase}}</span> <span class="fw-bold"> {{proiezione.film.durata }}&prime;</span></p>
+                        <p> <span>{{'home.disponibile' | translate | titlecase}}</span> <span class="fw-bold">{{proiezione.dataFine | date: 'dd/MM/yyyy'}}</span> </p>
+                    </div>
+                    
+                </p-card>
+            </div>
+
+            <div *ngIf="proiezioniInProgrammazione?.length == 0" class="mt-3">
+                <p class="fst-italic">{{'home.none' | translate | titlecase}}</p>
+            </div>
+        </div>
+        
+    </section>
+</div>

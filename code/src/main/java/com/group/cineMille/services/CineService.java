@@ -19,7 +19,6 @@ public class CineService implements ICineService {
 		
 		try {
 			out.setProiezioni(repo.getProiezioni());
-			out.setFilms(repo.getFilm());
 		} catch (Exception e) {
 			//log
 			e.printStackTrace();

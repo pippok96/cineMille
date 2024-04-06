@@ -5,5 +5,16 @@
     "sidebar": {
         "inProgrammazione": "in programmazione",
         "storico": "storico"
+    },
+    "home": {
+        "header": "in programmazione",
+        "durata": "durata",
+        "disponibile": "Disponibile fino a ",
+        "none": "nessun film in programmazione. ",
+        "dataInizio": "data inizio",
+        "dataFine": "data fine"
+    },
+    "storico": {
+        "header":"Storico"
     }
 }

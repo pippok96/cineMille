@@ -13,5 +13,4 @@ public class Cinema implements Serializable {
 	private static final long serialVersionUID = 6889614040597819100L;
 	
 	private List<Proiezione> proiezioni;
-	private List<Film> films;
 }

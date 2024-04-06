@@ -12,6 +12,12 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MenuModule } from 'primeng/menu';
 import { HomeComponent } from './components/home/home.component';
 import { StoricoComponent } from './components/storico/storico.component';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { CardModule } from 'primeng/card';
+import { CalendarModule } from 'primeng/calendar';
+import { FormsModule } from "@angular/forms";
+import { DataViewModule } from 'primeng/dataview';
+import { SortPipe } from "./pipes";
 
 function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -34,7 +40,7 @@ function HttpLoaderFactory(http: HttpClient) {
   }
 
 @NgModule({
-    declarations: [AppComponent, HomeComponent, StoricoComponent],
+    declarations: [AppComponent, HomeComponent, StoricoComponent, SortPipe],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
@@ -44,7 +50,12 @@ function HttpLoaderFactory(http: HttpClient) {
         HttpClientModule,
         SidebarModule,
         ButtonModule,
-        MenuModule
+        MenuModule,
+        ProgressSpinnerModule,
+        CardModule,
+        FormsModule,
+        CalendarModule,
+        DataViewModule
     ],
     providers: [
       {
@@ -58,7 +69,8 @@ function HttpLoaderFactory(http: HttpClient) {
     bootstrap: [AppComponent],
     exports: [
       HomeComponent,
-      StoricoComponent
+      StoricoComponent,
+      SortPipe
     ]
   })
   export class AppModule {}

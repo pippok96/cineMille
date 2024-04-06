@@ -20,7 +20,7 @@
 
         </p-sidebar>
 
-        <p-button [rounded]="true" (click)="sidebarVisible = true" icon="pi pi-arrow-right"></p-button>
+        <p-button [rounded]="true" (click)="sidebarVisible = true" icon="pi pi-bars"></p-button>
       </div>
 
     </div>
@@ -29,10 +29,8 @@
         <h1>{{'header' | translate | titlecase}}</h1>
       </header>
 
-      <section> 
-        routing
-        <app-storico></app-storico>
-        <app-home></app-home>
+      <section class="card mt-3">      
+        <router-outlet></router-outlet>       
       </section>
 
     </div>

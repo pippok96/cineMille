@@ -5,7 +5,9 @@
 
 
 body {
-
+    background-color: rgb(0,0,0, 0.8);
+    color: white;
+    
     a { /*override rules bootstrap. reboot*/
         
         text-decoration: none !important;
@@ -17,6 +19,12 @@ body {
 
     button { /*override rules bootstrap. reboot*/
         border-radius: revert-layer;
+    }
+
+    .info-film {
+        p {
+            margin: 0;
+        }
     }
 }
 

@@ -1,1 +1,51 @@
-<p>storico works!</p>
+
+
+<div class="p-3">
+    <header >
+        <p class="fw-bold fw-light fst-italic">{{ 'storico.header'| translate | titlecase}}</p>
+    </header>
+
+    <div class="card mt-1">
+        <p-dataView #dv [value]="data">
+            <ng-template pTemplate="list" let-proiezioni>
+                <div class="grid grid-nogutter">
+                    <div class="col-12" *ngFor="let proiezione of (proiezioni | sort)">
+                        <div class="d-flex flex-row p-4 gap-4" >
+                            <img width="100px" height="100px" [src]="getSrcImg(proiezione.film.locandina)" />
+                            
+                            <div class="d-flex flex-column justify-content-between align-items-center flex-1 gap-4">
+                                <div class="flex flex-column align-items-center gap-3">
+                                    
+                                    <!-- film nome-->
+                                    <div class="fw-bold ">{{ proiezione.film.nome }}</div>
+                                    
+                                    <!-- sala e orario-->
+                                    <div class="flex align-items-center gap-3">
+                                        <span class="flex align-items-center gap-2">
+                                            <i class="pi pi-map-marker"></i>
+                                            <span class="font-semibold"> {{ proiezione.sala.nome | titlecase}} - {{proiezione.orario}}</span>
+                                        </span>
+                                    </div>
+    
+                                    <!-- date proiezione-->
+                                    <div class="flex align-items-center gap-3">
+                                        <span class="flex align-items-center gap-2">
+                                            <i class="pi pi-calendar"></i>
+                                            <span class="font-semibold">
+                                                {{ proiezione.dataInizio | date: 'dd/MM/yyyy' }} - {{ proiezione.dataFine | date: 'dd/MM/yyyy' }}
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>                          
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </p-dataView>
+    
+    </div>
+</div>
+
+
